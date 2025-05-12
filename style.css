@@ -1,0 +1,210 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a2e;
+    z-index: 10;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1, h2 {
+    color: #f8f8f8;
+    text-shadow: 4px 4px 0px #ff6b6b;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    text-shadow: 3px 3px 0px #4ecdc4;
+}
+
+/* Buttons */
+.pixel-button {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+    background-color: #4ecdc4;
+    color: #1a1a2e;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px #ff6b6b;
+    transition: all 0.1s;
+}
+
+.pixel-button:hover, .pixel-button:active {
+    background-color: #ff6b6b;
+    box-shadow: 4px 4px 0px #4ecdc4;
+    transform: translate(1px, 1px);
+}
+
+.pixel-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px #4ecdc4;
+}
+
+.level-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+}
+
+/* Game Canvas */
+#game-canvas {
+    background-color: #16213e;
+    border: 4px solid #4ecdc4;
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+}
+
+/* Mobile Controls */
+#mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+#mobile-controls button {
+    pointer-events: auto;
+}
+
+.control-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(78, 205, 196, 0.7);
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+    margin: 0 10px;
+    touch-action: manipulation;
+}
+
+.control-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.jump-button {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+}
+
+.d-pad {
+    display: flex;
+    gap: 10px;
+}
+
+/* Game UI */
+#game-ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#level-display {
+    font-size: 14px;
+    color: #f8f8f8;
+    text-shadow: 2px 2px 0px #ff6b6b;
+}
+
+#pause-button {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+/* Game Over Screen */
+#game-over-message {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #f8f8f8;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    .pixel-button {
+        font-size: 16px;
+        padding: 15px 25px;
+    }
+    
+    #mobile-controls {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #game-canvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .pixel-button {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    
+    #mobile-controls {
+        display: flex;
+    }
+}
