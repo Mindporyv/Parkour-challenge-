@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Parkour Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Main Menu Screen -->
+        <div id="main-menu" class="screen">
+            <h1>PARKOUR CHALLENGE</h1>
+            <button id="start-button" class="pixel-button">START GAME</button>
+        </div>
+
+        <!-- Level Select Screen -->
+        <div id="level-select" class="screen hidden">
+            <h2>SELECT LEVEL</h2>
+            <div class="level-buttons">
+                <button class="pixel-button level-button" data-level="1">LEVEL 1</button>
+                <button class="pixel-button level-button" data-level="2">LEVEL 2</button>
+                <button class="pixel-button level-button" data-level="3">LEVEL 3</button>
+                <button class="pixel-button level-button" data-level="4">LEVEL 4</button>
+                <button class="pixel-button level-button" data-level="5">LEVEL 5</button>
+            </div>
+            <button id="back-button" class="pixel-button">BACK</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <canvas id="game-canvas"></canvas>
+            <div id="mobile-controls" class="hidden">
+                <div class="d-pad">
+                    <button id="left-button" class="control-button">←</button>
+                    <button id="right-button" class="control-button">→</button>
+                </div>
+                <button id="jump-button" class="control-button jump-button">JUMP</button>
+            </div>
+            <div id="game-ui">
+                <div id="level-display">LEVEL: <span id="current-level">1</span></div>
+                <button id="pause-button" class="pixel-button">PAUSE</button>
+            </div>
+        </div>
+
+        <!-- Pause Screen -->
+        <div id="pause-screen" class="screen hidden">
+            <h2>PAUSED</h2>
+            <button id="resume-button" class="pixel-button">RESUME</button>
+            <button id="quit-button" class="pixel-button">QUIT</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen hidden">
+            <h2 id="game-over-title">GAME OVER</h2>
+            <p id="game-over-message"></p>
+            <button id="retry-button" class="pixel-button">RETRY</button>
+            <button id="level-select-button" class="pixel-button">LEVEL SELECT</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
